@@ -9,6 +9,8 @@
 git clone --depth=1 https://github.com/ArrowOS-Devices/android_kernel_xiaomi_sweet.git -b arrow-11.0
 cd android_kernel_xiaomi_sweet
 
+wget https://raw.githubusercontent.com/phoenix-1708/delta_kernel/main/kernel_build.sh
+source kernel_build.sh
 
 # Config
 CURRENT_DIR="$(pwd)"
