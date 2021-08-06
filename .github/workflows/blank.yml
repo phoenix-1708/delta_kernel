@@ -35,9 +35,8 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Setup Build Env
-        run: |
-              wget https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh
-              source android_build_env.sh
+        run: git clone https://github.com/akhilnarang/scripts && cd scripts && bash setup/android_build_env.sh && cd ..
+             
       - name: Build
         run: |
               wget https://raw.githubusercontent.com/phoenix-1708/delta_kernel/main/kernel_setup.sh
