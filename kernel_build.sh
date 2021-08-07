@@ -74,8 +74,8 @@ build_kernel() {
                 PATH="$TC_DIR/clang-r416183c/bin:$TC_DIR1/bin:$TC_DIR2/bin:$PATH" \
                 CC="clang" \
 		CLANG_TRIPLE=$TC_DIR/clang-r416183c/bin/aarch64-linux-gnu- \
-                CROSS_COMPILE=$TC_DIR/bin/aarch64-linux-android- \
-                CROSS_COMPILE_ARM32=$TC_DIR/bin/arm-linux-androideabi- \
+                CROSS_COMPILE=$TC_DIR1/bin/aarch64-linux-android- \
+                CROSS_COMPILE_ARM32=$TC_DIR2/bin/arm-linux-androideabi- \
                 LLVM=llvm- \
                 AR=llvm-ar \
                 NM=llvm-nm \
