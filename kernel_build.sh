@@ -13,6 +13,9 @@ LOG="$HOME/log.txt"
 ARCH="arm64"
 SUBARCH="arm64"
 export ARCH SUBARCH
+export KBUILD_BUILD_USER=phoenix-1708
+export KBUILD_BUILD_HOST=ubuntu
+export TARGET_KERNEL_CLANG_COMPILE=true
 
 KERNEL_IMG=$KERNEL_DIR/out/arch/$ARCH/boot/Image.gz
 KERNEL_DTBO=$KERNEL_DIR/out/arch/$ARCH/boot/dtbo.img
@@ -68,10 +71,11 @@ build_kernel() {
 
     BUILD_START=$(date +"%s")
     make -j$(nproc --all) O=out \
-                PATH="$TC_DIR/bin:$PATH" \
+                PATH="$TC_DIR/clang-r416183c/bin:$TC_DIR1/bin:$TC_DIR2/bin:$PATH" \
                 CC="clang" \
-                CROSS_COMPILE=$TC_DIR/bin/aarch64-linux-gnu- \
-                CROSS_COMPILE_ARM32=$TC_DIR/bin/arm-linux-gnueabi- \
+		CLANG_TRIPLE=$TC_DIR/clang-r416183c/bin/aarch64-linux-gnu- \
+                CROSS_COMPILE=$TC_DIR/bin/aarch64-linux-android- \
+                CROSS_COMPILE_ARM32=$TC_DIR/bin/arm-linux-androideabi- \
                 LLVM=llvm- \
                 AR=llvm-ar \
                 NM=llvm-nm \
