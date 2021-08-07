@@ -6,7 +6,7 @@
 
 # Config
 DEVICE="sweet"
-DEFCONFIG="$CURRENT_DIR/delta_kernel/${DEVICE}_defconfig"
+DEFCONFIG="vendor/${DEVICE}_defconfig"
 LOG="$HOME/log.txt"
 
 # Export arch and subarch
