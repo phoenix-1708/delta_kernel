@@ -71,19 +71,20 @@ build_kernel() {
 
     BUILD_START=$(date +"%s")
     make -j$(nproc --all) O=out \
-                # PATH="$TC_DIR/clang-r416183c/bin:$TC_DIR1/bin:$TC_DIR2/bin:$PATH" \
-		PATH="$TC_DIR/bin:$TC_DIR1/bin:$TC_DIR2/bin:$PATH" \
-                CC="clang" \
-		# CLANG_TRIPLE=$TC_DIR/clang-r416183c/bin/aarch64-linux-gnu- \
-		CLANG_TRIPLE=$TC_DIR/bin/aarch64-linux-gnu- \
+                PATH="$TC_DIR/clang-r416183c/bin:$TC_DIR1/bin:$TC_DIR2/bin:$PATH" \
+		# PATH="$TC_DIR/bin:$TC_DIR1/bin:$TC_DIR2/bin:$PATH" \
+		# PATH="$TC_DIR/bin:$PATH" \
+                CC=clang \
+		CLANG_TRIPLE=$TC_DIR/clang-r416183c/bin/aarch64-linux-gnu- \
+		# CLANG_TRIPLE=$TC_DIR/bin/aarch64-linux-gnu- \
                 CROSS_COMPILE=$TC_DIR1/bin/aarch64-linux-android- \
                 CROSS_COMPILE_ARM32=$TC_DIR2/bin/arm-linux-androideabi- \
-                LLVM=llvm- \
-                AR=llvm-ar \
-                NM=llvm-nm \
-                OBJCOPY=llvm-objcopy \
-                OBJDUMP=llvm-objdump \
-                STRIP=llvm-strip |& tee $LOG
+                # LLVM=llvm- \
+                # AR=llvm-ar \
+                # NM=llvm-nm \
+                # OBJCOPY=llvm-objcopy \
+                # OBJDUMP=llvm-objdump \
+                # STRIP=llvm-strip |& tee $LOG
 
     BUILD_END=$(date +"%s")
     DIFF=$((BUILD_END - BUILD_START))
