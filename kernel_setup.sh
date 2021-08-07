@@ -10,6 +10,7 @@ git clone --depth=1 https://github.com/ArrowOS-Devices/android_kernel_xiaomi_swe
 cd android_kernel_xiaomi_sweet
 
 git clone --depth=1 https://github.com/phoenix-1708/delta_kernel.git delta_kernel
+cp $(pwd)/delta_kernel/sweet_defconfig $(pwd)/arch/arm64/configs/vendor/sweet_defconfig
 
 # Config
 CURRENT_DIR="$(pwd)"
