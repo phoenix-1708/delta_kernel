@@ -5,7 +5,7 @@
 #
 
 # Config
-DEVICE="sweet"
+DEVICE="sweet_user"
 DEFCONFIG="vendor/${DEVICE}_defconfig"
 LOG="$HOME/log.txt"
 
