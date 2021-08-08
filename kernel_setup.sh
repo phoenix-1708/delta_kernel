@@ -10,7 +10,7 @@
 git clone --depth=1 https://github.com/TheStaticDesign/android_kernel_xiaomi_sweet.git -b 11
 cd android_kernel_xiaomi_sweet
 rm -rf kernel_setup.sh
-rn -rf kernel_build.sh
+rm -rf kernel_build.sh
 rm -rf $(pwd)/arch/arm64/configs/vendor/sweet_defconfig
 git clone --depth=1 https://github.com/phoenix-1708/delta_kernel.git delta_kernel
 cp $(pwd)/delta_kernel/sweet_defconfig $(pwd)/arch/arm64/configs/vendor/sweet_defconfig
