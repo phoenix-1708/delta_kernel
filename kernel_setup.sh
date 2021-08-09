@@ -7,7 +7,7 @@
 # Assumes required packages are already installed
 
 # git clone --depth=1 https://github.com/ArrowOS-Devices/android_kernel_xiaomi_sweet.git -b arrow-11.0
-git clone --depth=1 https://github.com/phoenix-1708/epsilon.git -b master
+git clone --depth=1 https://github.com/phoenix-1708/epsilon.git -b 11
 cd epsilon
 
 
