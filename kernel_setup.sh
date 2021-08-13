@@ -8,7 +8,7 @@
 
 # git clone --depth=1 https://github.com/ArrowOS-Devices/android_kernel_xiaomi_sweet.git -b arrow-11.0
 git clone --depth=1 https://github.com/phoenix-1708/android_kernel_xiaomi_sweet-1.git -b 11
-cd epsilon
+cd android_kernel_xiaomi_sweet-1
 
 
 # Config
